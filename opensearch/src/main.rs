@@ -14,10 +14,12 @@ pub struct Bibob {
     pub bibob_hitcount: i32,
 }
 
+
 #[tokio::main]
 async fn main() -> Result<(), Error> {
 
     let query_string = query::query_string();
+    //"phrase.creator='peter hansen'";
 
     let request_url = format!("https://opensearch.addi.dk/{version}/?action={action}&query={query}&agency={agency}&profile={profile}&start={start}&stepValue={step_value}&outputType={output_type}",
         version = "test_5.2", //b3.5_5.2

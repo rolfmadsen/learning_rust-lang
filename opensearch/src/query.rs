@@ -10,27 +10,17 @@ pub struct Query {
 }
 
 pub fn read_query_from_file<P: AsRef<Path>>(path: P) -> Result<Query, Box<dyn Error>> {
-    // Open the file in read-only mode with buffer.
-    let file = File::open(path)?;
-    let reader = BufReader::new(file);
-
-    // Read the JSON contents of the file as an instance of `User`.
-    let u = serde_json::from_reader(reader)?;
-
-    // Return the `User`.
-    Ok(u)
+    let file = File::open(path).expect("Failed to open query.json");   // Open the file in read-only mode with buffer.
+    let reader = BufReader::new(file);    
+    let u = serde_json::from_reader(reader)?;   // Read the JSON contents of the file as an instance of `Query`.
+    Ok(u)   // Return the `Query`.
 }
 
 pub fn query_string() -> std::string::String {
-    let u = read_query_from_file("query.json").unwrap();
-    let return_value = format!("{}", u.query_value); // NB. Use "let return_value = format!("{:}", u.query_value);" to escape single quotes in search query.
+    let u = read_query_from_file("src/query.json").unwrap();
+    let return_value = format!("{:}", u.query_value); // NB. Use "let return_value = format!("{:}", u.query_value);" to escape single quotes in search query.
     //println!("{:?}", return_value);
     return return_value
 }
 
-/* Used for test purposes:
-fn main() {
-    let print_value = query_string();
-    println!("{:?}", print_value)
-}
-*/
+// Source: https://docs.serde.rs/serde_json/fn.from_reader.html
