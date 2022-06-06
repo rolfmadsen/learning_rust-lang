@@ -44,6 +44,12 @@ cargo build --dev
     cargo run --release
 ```
 
+### Compile and run main.rs with backtrace
+```console
+    RUST_BACKTRACE=1 cargo run
+```
+Can also be run with 1 | full
+
 ## Rust & Serde
 
 ### Handling missing JSON fields
@@ -72,6 +78,10 @@ cargo build --dev
 ## Auto genereate structs from JSON
 
 (https://app.quicktype.io/)[https://app.quicktype.io/]
+
+## API Request ressources
+
+https://betterprogramming.pub/learn-rust-by-example-structs-methods-impl-and-traits-de11e8d02b68
 
 ## Tutorials
 
