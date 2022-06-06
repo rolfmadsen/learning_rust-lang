@@ -2,11 +2,6 @@
 use serde::{Deserialize, Serialize};
 use reqwest::Error;
 mod query;
-//use serde_json;
-//use std::collections::HashMap;
-//use url;
-//use std::convert::From;
-
 use opensearch::OpenSearch;
 #[path="./structs/opensearch.rs"]
 pub mod opensearch;
