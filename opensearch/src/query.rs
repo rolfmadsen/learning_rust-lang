@@ -18,9 +18,7 @@ pub fn read_query_from_file<P: AsRef<Path>>(path: P) -> Result<Query, Box<dyn Er
 
 pub fn query_string() -> std::string::String {
     let u = read_query_from_file("src/query.json").unwrap();
-    let return_value = format!("{:}", u.query_value); // NB. Use "let return_value = format!("{:}", u.query_value);" to escape single quotes in search query.
-    //println!("{:?}", return_value);
-    return return_value
+    u.query_value
 }
 
 // Source: https://docs.serde.rs/serde_json/fn.from_reader.html
