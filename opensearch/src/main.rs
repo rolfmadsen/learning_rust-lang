@@ -1,11 +1,11 @@
 #![allow(unused_imports)]
 use serde::{Deserialize, Serialize};
-use serde_json;
-use std::collections::HashMap;
 use reqwest::Error;
-use url;
 mod query;
-use std::convert::From;
+//use serde_json;
+//use std::collections::HashMap;
+//use url;
+//use std::convert::From;
 
 use opensearch::OpenSearch;
 #[path="./structs/opensearch.rs"]
